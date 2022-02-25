@@ -1,4 +1,2 @@
 # jenkins-playground
-
-Test 1
-test 4
+This is a test commit
