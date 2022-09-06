@@ -1,19 +1,14 @@
 pipeline {
      agent any
      stages {
-         stage('build') {
+         stage('Build') {
              steps {
                  echo 'Building...'
              }
-         }
-          stage('deploy to staging') {
-             steps {
-                 echo 'Deploying...'
-             }
-         }
-          stage('deploy to production') {
-             steps {
-                 echo 'Deploying...'
+             post {
+                 always {
+                     jiraSendBuildInfo() 
+                 }
              }
          }
      }
